@@ -1,0 +1,22 @@
+[
+    {
+        "Model Type": "Deep Neural Network",
+        "Accuracy": 0.5776562690734863,
+        "Saved Model": "fraud_detection_dnn_model.h5"
+    },
+    {
+        "Model Type": "SVM",
+        "Accuracy": 0.4985,
+        "Saved Model": "svm_fraud_model.pkl"
+    },
+    {
+        "Model Type": "Logistic Regression",
+        "Accuracy": 0.497,
+        "Saved Model": "logistic_regression_fraud_model.pkl"
+    },
+    {
+        "Model Type": "Gradient Boosting Classifier",
+        "Accuracy": 0.5015,
+        "Saved Model": "gradient_boosting_fraud_model.pkl"
+    }
+]

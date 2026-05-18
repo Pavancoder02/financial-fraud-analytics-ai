@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Model Accuracy Charts</title>
+
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href = "{{ url_for('static', filename='images/favicon.png') }}" type="">
+
+  <!-- <title> Finexo </title> -->
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href = "{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href = "{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href = "{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href = "{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            display: none;
+            max-width: 40%; /* Limit the width of the charts */
+            height: 40%; /* Adjust the height */
+        }
+        .active {
+            display: block;
+        }
+        #toggle-buttons {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero_area">
+
+        <div class="hero_bg_box">
+          <div class="bg_img_box">
+            <img src="{{ url_for('static', filename='images/hero-bg.png') }}" alt="">
+          </div>
+        </div>
+    
+    <!-- header section strats -->
+    <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="home.html">
+              <span>
+                
+              </span>
+            </a>
+  
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/service_provider/view_users">View All Remote Users </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/service_provider/browse_datasets">Browse Data Sets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/service_provider/view_train_test_accuracy_bar_chart">View Trained and Tested Accuracy in Bar Chart</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/service_provider/view_train_test_accuracy_results">View Trained and Tested Accuracy Results</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/service_provider/view_financial_trans_detection_type">View Financial Transaction Detection Type</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                  </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+      <!-- slider section -->
+      <section class="slider_section ">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="detail-box">
+                      <h1>
+                        Transparency and Privacy:  <br>
+                      </h1>
+                      <p>
+                        The Role of Explainable AI and Federated Learning in <br>
+                        Financial Fraud Detection
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="img-box">
+                      <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="detail-box">
+                        <h1>
+                            Transparency and Privacy:  <br>
+                          </h1>
+                          <p>
+                            The Role of Explainable AI and Federated Learning in <br>
+                            Financial Fraud Detection
+                          </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="img-box">
+                      <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="detail-box">
+                        <h1>
+                            Transparency and Privacy:  <br>
+                          </h1>
+                          <p>
+                            The Role of Explainable AI and Federated Learning in <br>
+                            Financial Fraud Detection
+                          </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="img-box">
+                      <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="carousel-indicators">
+            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+            <li data-target="#customCarousel1" data-slide-to="1"></li>
+            <li data-target="#customCarousel1" data-slide-to="2"></li>
+          </ol>
+        </div>
+  
+      </section>
+      <!-- end slider section -->
+    </div>
+  
+  
+    <!-- service section -->
+  
+    <section class="service_section layout_padding">
+      <div class="service_container">
+        <div class="container ">
+          
+          <!-- <div class="row"> -->
+            <!-- <div class="col-md-4 ">
+            </div> -->
+            <!-- <div class="col-md-4 "> -->
+              <!-- <div class="box ">
+               
+                <div class="detail-box">
+                     -->
+
+<h1>Model Accuracy</h1>
+<div id="toggle-buttons">
+    <button onclick="toggleChart('line')">Line Chart</button>
+    <button onclick="toggleChart('pie')">Pie Chart</button>
+</div>
+
+<!-- Line Chart Container -->
+<div id="line-chart-container" class="chart-container active">
+    <canvas id="accuracyLineChart" width="600" height="300"></canvas>
+</div>
+
+<!-- Pie Chart Container -->
+<div id="pie-chart-container" class="chart-container">
+    <canvas id="accuracyPieChart" width="600" height="300"></canvas>
+</div>
+
+<script>
+    // Get the model types and accuracies from Flask
+    var modelTypes = {{ model_types | tojson }};
+    var accuracies = {{ accuracies | tojson }};
+    
+    // Create the Line Chart
+    var lineCtx = document.getElementById('accuracyLineChart').getContext('2d');
+    var accuracyLineChart = new Chart(lineCtx, {
+        type: 'line',
+        data: {
+            labels: modelTypes,
+            datasets: [{
+                label: 'Accuracy (%)',
+                data: accuracies,
+                borderColor: '#4CAF50',
+                backgroundColor: 'rgba(76, 175, 80, 0.2)',
+                fill: true,
+                pointBackgroundColor: '#4CAF50',
+                pointRadius: 5,
+                pointHoverRadius: 7,
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 1,
+                    ticks: {
+                        stepSize: 0.1,
+                        callback: function(value) {
+                            return value * 100 + '%';
+                        }
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return 'Accuracy: ' + (tooltipItem.raw * 100).toFixed(2) + '%';
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Create the Pie Chart
+    var pieCtx = document.getElementById('accuracyPieChart').getContext('2d');
+    var accuracyPieChart = new Chart(pieCtx, {
+        type: 'pie',
+        data: {
+            labels: modelTypes,
+            datasets: [{
+                label: 'Accuracy (%)',
+                data: accuracies.map(acc => acc * 100), // Convert to percentage
+                backgroundColor: ['#4CAF50', '#FF5733', '#FFC107', '#008CBA'],
+                borderColor: ['#4CAF50', '#FF5733', '#FFC107', '#008CBA'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw.toFixed(2) + '%';
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Toggle between the Line Chart and Pie Chart
+    function toggleChart(chartType) {
+        var lineChartContainer = document.getElementById('line-chart-container');
+        var pieChartContainer = document.getElementById('pie-chart-container');
+        
+        if (chartType === 'line') {
+            lineChartContainer.classList.add('active');
+            pieChartContainer.classList.remove('active');
+        } else if (chartType === 'pie') {
+            pieChartContainer.classList.add('active');
+            lineChartContainer.classList.remove('active');
+        }
+    }
+</script>
+                <!-- </div>
+              </div> -->
+            </div>
+            <div class="col-md-4 ">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- end service section -->
+  
+  
+   
+  
+    <!-- info section -->
+  
+    <section class="info_section layout_padding2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 info_col">
+            <div class="info_contact">
+              
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  
+    <!-- end info section -->
+  
+    <!-- footer section -->
+    <section class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By US
+        </p>
+      </div>
+    </section>
+    <!-- footer section -->
+  
+    <!-- jQery -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+    <!-- owl slider -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+    </script>
+    <!-- End Google Map -->
+  
+</body>
+</html>
+
+
