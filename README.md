@@ -1,9 +1,11 @@
 # Financial Fraud Analytics AI
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python" />
-  <img src="https://img.shields.io/badge/Flask-Web%20Framework-black?style=for-the-badge&logo=flask" />
+  <img src="https://img.shields.io/badge/Data%20Analytics-Visualization%20%26%20Insights-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Machine%20Learning-Fraud%20Detection-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Artificial%20Intelligence-AI%20Powered-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Python-3.10-yellow?style=for-the-badge&logo=python" />
+  <img src="https://img.shields.io/badge/Flask-Web%20Framework-black?style=for-the-badge&logo=flask" />
   <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" />
 </p>
 
